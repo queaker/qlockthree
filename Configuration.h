@@ -50,12 +50,14 @@
 /*
  * Welcher LED-Treiber soll benutzt werden?
  */
-   #define LED_DRIVER_DEFAULT
+// #define LED_DRIVER_DEFAULT
 // #define LED_DRIVER_UEBERPIXEL
 // #define LED_DRIVER_POWER_SHIFT_REGISTER
 // #define LED_DRIVER_NEOPIXEL
 // #define LED_DRIVER_DOTSTAR
 // #define LED_DRIVER_LPD8806
+   #define LED_DRIVER_WS2801
+
 
 /*
  * Welche Uhr soll benutzt werden?
@@ -173,6 +175,9 @@
 #ifdef LED_DRIVER_LPD8806
 #define MYDCF77_MEANSTARTVALUE 1280
 #endif
+#ifdef LED_DRIVER_WS2801
+#define MYDCF77_MEANSTARTVALUE 7
+#endif
 // ------------------ Lichtabhaengiger Widerstand ---------------------
 /*
  * Sollen die Grenzwerte vom LDR automatisch angepasst werden? Bei einem Neustart der QlockTwo kann
@@ -228,5 +233,7 @@
 #ifdef LED_DRIVER_LPD8806
 #define LDR_CHECK_RATE 10
 #endif
-
+#ifdef LED_DRIVER_WS2801
+#define LDR_CHECK_RATE 1
+#endif
 #endif

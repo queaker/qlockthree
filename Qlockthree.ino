@@ -180,6 +180,7 @@
 #include "LedDriverNeoPixel.h"
 #include "LedDriverDotStar.h"
 #include "LedDriverLPD8806.h"
+#include "LedDriverWS2801.h"
 #include "IRTranslator.h"
 #include "IRTranslatorSparkfun.h"
 #include "IRTranslatorMooncandles.h"
@@ -412,6 +413,37 @@ LedDriverLPD8806 ledDriver(6, 7);
 #define PIN_DCF77_LED 10
 
 #define PIN_SPEAKER -1
+#endif
+
+/**
+ * Der LED-Treiber fuer WS2801-Stripes
+ * Data: 10
+ * Clock: 11
+ */
+#ifdef LED_DRIVER_WS2801
+LedDriverWS2801 ledDriver(10, 11);
+
+#define PIN_MODE 7
+#define PIN_M_PLUS 5
+#define PIN_H_PLUS 6
+
+#define BUTTONS_PRESSING_AGAINST HIGH
+
+#define PIN_IR_RECEIVER A1
+
+#define PIN_LDR A3
+#define IS_INVERTED true
+
+#define PIN_SQW_SIGNAL 2
+#define PIN_DCF77_SIGNAL 9
+
+#define PIN_DCF77_PON A0
+
+#define PIN_SQW_LED 4
+#define PIN_DCF77_LED 8
+
+#define PIN_SPEAKER 13
+
 #endif
 
 /**
